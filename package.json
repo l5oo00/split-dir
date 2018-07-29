@@ -1,0 +1,26 @@
+{
+  "name": "split-dir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "split-dir": "bin/split-dir"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l5oo00/split-dir.git"
+  },
+  "author": "l5oo00",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/l5oo00/split-dir/issues"
+  },
+  "homepage": "https://github.com/l5oo00/split-dir#readme",
+  "dependencies": {
+    "commander": "^2.16.0",
+    "fs-extra": "^7.0.0"
+  }
+}

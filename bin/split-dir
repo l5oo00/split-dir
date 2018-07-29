@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const pathLib = require('path');
+const program = require('commander');
+const packageJson = require('../package.json');
+
+const start = require('../index.js').start;
+
+function run(filePath) {
+    start(pathLib.resolve(filePath), {
+        subDirPrefix: program.sub_dir_prefix || 'package',
+        fileCountPerDir: program.file_count || 500
+    });
+}
+
+program
+    .version(packageJson.version, '-v --version')
+    .usage('[options] <dir ...>')
+    .option('-s --sub_dir_prefix <sub_dir_prefix>', '拆分后生成得子文件夹名前缀，默认为： package')
+    .option('-c --file_count <n>', '单个文件夹内最大文件数，默认为： 500')
+    // .command('*')
+    .action(run);
+
+program.parse(process.argv);
